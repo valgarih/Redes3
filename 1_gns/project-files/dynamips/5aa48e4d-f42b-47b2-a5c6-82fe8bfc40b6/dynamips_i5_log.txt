@@ -1,0 +1,49 @@
+Aug 21 13:10:49.626 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Aug 21 13:10:49.630 HYPERVISOR: Started on IP = 10.100.65.9, TCP port = 50995.
+Aug 21 13:10:50.007 HYPERVISOR: exec_cmd: hypervisor version 
+Aug 21 13:10:50.008 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips 
+Aug 21 13:10:50.009 GENERAL: working_dir=C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips
+Aug 21 13:10:50.009 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips\777d0558-476e-4d70-bbbd-ae0098b87c54 
+Aug 21 13:10:50.011 GENERAL: working_dir=C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips\777d0558-476e-4d70-bbbd-ae0098b87c54
+Aug 21 13:10:50.012 HYPERVISOR: exec_cmd: vm create R3 3 c3725 
+Aug 21 13:10:50.019 VM: VM R3 created.
+Aug 21 13:10:50.020 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5002 
+Aug 21 13:10:50.021 HYPERVISOR: exec_cmd: c3725 get_mac_addr R3 
+Aug 21 13:10:50.023 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+Aug 21 13:10:50.024 HYPERVISOR: exec_cmd: vm set_exec_area R3 64 
+Aug 21 13:10:50.025 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:10:50.026 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x60c09aa0 
+Aug 21 13:10:50.028 HYPERVISOR: exec_cmd: vm set_ios R3 C:/Users/Valery Garibay/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Aug 21 13:10:50.030 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+Aug 21 13:10:50.031 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:10:50.032 HYPERVISOR: exec_cmd: vm slot_add_binding R3 1 0 NM-1FE-TX 
+Aug 21 13:10:50.034 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:10:50.034 HYPERVISOR: exec_cmd: vm slot_add_binding R3 2 0 NM-1FE-TX 
+Aug 21 13:10:50.036 HYPERVISOR: exec_cmd: vm slot_add_binding R3 0 16 WIC-2T 
+Aug 21 13:10:50.190 HYPERVISOR: exec_cmd: vm set_ios R3 C:/Users/Valery Garibay/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Aug 21 13:10:52.559 HYPERVISOR: exec_cmd: vm set_ios R3 C:/Users/Valery Garibay/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Aug 21 13:14:53.971 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:14:53.974 HYPERVISOR: exec_cmd: vm extract_config R3 
+Aug 21 13:15:14.232 HYPERVISOR: exec_cmd: nio create_udp udp-586377b4-673d-4472-9d45-31b0dbec0d23 10030 127.0.0.1 10031 
+Aug 21 13:15:14.626 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 16 udp-586377b4-673d-4472-9d45-31b0dbec0d23 
+Aug 21 13:15:14.627 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:18:51.080 HYPERVISOR: exec_cmd: nio create_udp udp-e1315d4b-1406-4b04-9002-7d8c9df598b3 10046 127.0.0.1 10047 
+Aug 21 13:18:51.135 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R3 0 0 udp-e1315d4b-1406-4b04-9002-7d8c9df598b3 
+Aug 21 13:18:51.136 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:22:17.801 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:22:17.807 HYPERVISOR: exec_cmd: vm extract_config R3 
+Aug 21 13:22:27.678 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Aug 21 13:22:27.684 VM: VM Ghost created.
+Aug 21 13:22:27.686 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Valery Garibay/GNS3/images/IOS/c3725-adventerprisek9-mz.124-15.T14.image 
+Aug 21 13:22:27.687 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Aug 21 13:22:27.689 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips\c3725-adventerprisek9-mz.124-15.T14.image-128.ghost' 
+Aug 21 13:22:27.690 HYPERVISOR: exec_cmd: vm get_status R3 
+Aug 21 13:22:27.696 HYPERVISOR: exec_cmd: vm set_config R3 configs\i3_startup-config.cfg 
+Aug 21 13:22:27.697 HYPERVISOR: exec_cmd: vm start R3 
+Aug 21 13:22:58.286 HYPERVISOR: exec_cmd: vm extract_config R3 
+Aug 21 13:22:58.306 HYPERVISOR: exec_cmd: vm extract_config R3 
+Aug 21 16:25:37.014 HYPERVISOR: Stopped.
+Aug 21 16:25:37.104 VM: VM Ghost destroyed.
+Aug 21 16:25:37.313 VM: VM R3 shutdown.
+Aug 21 16:25:37.313 VM: VM R3 destroyed.
+Aug 21 16:25:37.355 GENERAL: reset done.

@@ -1,0 +1,22 @@
+Aug 21 12:56:02.001 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Aug 21 12:56:02.003 HYPERVISOR: Started on IP = 10.100.65.9, TCP port = 50729.
+Aug 21 12:56:02.448 HYPERVISOR: exec_cmd: hypervisor version 
+Aug 21 12:56:02.448 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips 
+Aug 21 12:56:02.449 GENERAL: working_dir=C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips
+Aug 21 12:56:02.450 HYPERVISOR: exec_cmd: ethsw create Ethernetswitch-1 
+Aug 21 12:56:35.075 HYPERVISOR: exec_cmd: nio create_udp udp-8f6656c4-1f4e-47be-bc9e-77fc2bb8cf56 10007 10.100.65.9 10006 
+Aug 21 12:56:35.077 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-1 udp-8f6656c4-1f4e-47be-bc9e-77fc2bb8cf56 
+Aug 21 12:56:35.091 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-8f6656c4-1f4e-47be-bc9e-77fc2bb8cf56 1 
+Aug 21 12:56:41.776 HYPERVISOR: exec_cmd: nio create_udp udp-269e2659-c9ed-4812-8763-d28271afdd71 10010 10.100.65.9 10011 
+Aug 21 12:56:41.776 HYPERVISOR: exec_cmd: ethsw add_nio Ethernetswitch-1 udp-269e2659-c9ed-4812-8763-d28271afdd71 
+Aug 21 12:56:41.795 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-269e2659-c9ed-4812-8763-d28271afdd71 1 
+Aug 21 12:56:48.991 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-269e2659-c9ed-4812-8763-d28271afdd71 1 
+Aug 21 12:56:48.993 HYPERVISOR: exec_cmd: ethsw set_access_port Ethernetswitch-1 udp-8f6656c4-1f4e-47be-bc9e-77fc2bb8cf56 1 
+Aug 21 13:10:33.414 HYPERVISOR: exec_cmd: ethsw remove_nio Ethernetswitch-1 udp-8f6656c4-1f4e-47be-bc9e-77fc2bb8cf56 
+Aug 21 13:10:33.434 HYPERVISOR: exec_cmd: nio delete udp-8f6656c4-1f4e-47be-bc9e-77fc2bb8cf56 
+Aug 21 13:10:33.514 HYPERVISOR: exec_cmd: ethsw remove_nio Ethernetswitch-1 udp-269e2659-c9ed-4812-8763-d28271afdd71 
+Aug 21 13:10:33.518 HYPERVISOR: exec_cmd: nio delete udp-269e2659-c9ed-4812-8763-d28271afdd71 
+Aug 21 13:10:33.646 HYPERVISOR: exec_cmd: ethsw delete Ethernetswitch-1 
+Aug 21 13:10:33.648 HYPERVISOR: exec_cmd: hypervisor stop 
+Aug 21 13:10:33.874 HYPERVISOR: Stopped.
+Aug 21 13:10:33.874 GENERAL: reset done.

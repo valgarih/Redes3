@@ -1,0 +1,222 @@
+R3#show running-config
+Building configuration...
+
+Current configuration : 1747 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$Ge76$kvtz8.FgVizsG3hTkqNAQ1
+enable password ipn
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+archive
+ log config
+  hidekeys
+!
+!
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+interface Loopback1
+ ip address 192.168.2.1 255.255.255.0
+!
+interface Loopback2
+ ip address 192.168.3.1 255.255.255.0
+!
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Serial0/0
+ ip address 192.168.10.6 255.255.255.252
+ ip summary-address eigrp 1 192.168.0.0 255.255.252.0 5
+ clock rate 64000
+!
+interface FastEthernet0/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface Serial0/1
+ bandwidth 1024
+ ip address 192.168.10.10 255.255.255.252
+ ip summary-address eigrp 1 192.168.0.0 255.255.252.0 5
+ clock rate 64000
+!
+interface Serial0/2
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/3
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+router eigrp 1
+ network 192.168.1.0
+ network 192.168.2.0
+ network 192.168.3.0
+ network 192.168.10.4 0.0.0.3
+ network 192.168.10.8 0.0.0.3
+ no auto-summary
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+no cdp log mismatch duplex
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+banner motd ^C<hola valery>^C
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ password ipn
+ logging synchronous
+ login
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ password ipn
+ login
+!
+!
+end
+
+R3#
+R3#
+R3#
+R3#
+R3#
+R3#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is 192.168.10.9 to network 0.0.0.0
+
+     192.168.10.0/30 is subnetted, 2 subnets
+C       192.168.10.4 is directly connected, Serial0/0
+C       192.168.10.8 is directly connected, Serial0/1
+     172.16.0.0/16 is variably subnetted, 2 subnets, 2 masks
+D       172.16.1.0/24 [90/2195456] via 192.168.10.5, 00:29:28, Serial0/0
+D       172.16.3.0/30 [90/41024000] via 192.168.10.9, 00:28:24, Serial0/1
+                      [90/41024000] via 192.168.10.5, 00:28:24, Serial0/0
+C    192.168.1.0/24 is directly connected, FastEthernet0/0
+C    192.168.2.0/24 is directly connected, Loopback1
+C    192.168.3.0/24 is directly connected, Loopback2
+D*EX 0.0.0.0/0 [170/3139840] via 192.168.10.9, 00:06:43, Serial0/1
+D    192.168.0.0/22 is a summary, 00:11:35, Null0
+R3#
+R3#show interface brief
+                  ^
+% Invalid input detected at '^' marker.
+
+R3#show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+FastEthernet0/0            192.168.1.1     YES manual up                    up
+Serial0/0                  192.168.10.6    YES manual up                    up
+FastEthernet0/1            unassigned      YES unset  administratively down down
+Serial0/1                  192.168.10.10   YES manual up                    up
+Serial0/2                  unassigned      YES unset  administratively down down
+Serial0/3                  unassigned      YES unset  administratively down down
+Loopback1                  192.168.2.1     YES manual up                    up
+Loopback2                  192.168.3.1     YES manual up                    up
+R3#
+R3#show ip protocols
+Routing Protocol is "eigrp 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Default networks flagged in outgoing updates
+  Default networks accepted from incoming updates
+  EIGRP metric weight K1=1, K2=0, K3=1, K4=0, K5=0
+  EIGRP maximum hopcount 100
+  EIGRP maximum metric variance 1
+  Redistributing: eigrp 1
+  EIGRP NSF-aware route hold timer is 240s
+  Automatic network summarization is not in effect
+  Address Summarization:
+    192.168.0.0/22 for Serial0/0, Serial0/1
+      Summarizing with metric 128256
+  Maximum path: 4
+  Routing for Networks:
+    192.168.1.0
+    192.168.2.0
+    192.168.3.0
+    192.168.10.4/30
+    192.168.10.8/30
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    (this router)         90      00:11:58
+    192.168.10.5          90      00:07:07
+    192.168.10.9          90      00:07:07
+  Distance: internal 90 external 170

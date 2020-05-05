@@ -1,0 +1,10 @@
+Aug 21 12:55:51.626 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Aug 21 12:55:51.630 HYPERVISOR: Started on IP = 10.100.65.9, TCP port = 50714.
+Aug 21 12:55:52.053 HYPERVISOR: exec_cmd: hypervisor version 
+Aug 21 12:55:52.054 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips 
+Aug 21 12:55:52.055 GENERAL: working_dir=C:\Users\Valery Garibay\Documents\7_Semestre\Redes3\1_gns\project-files\dynamips
+Aug 21 12:55:52.056 HYPERVISOR: exec_cmd: atmsw create ATMswitch-1 
+Aug 21 12:55:56.305 HYPERVISOR: exec_cmd: atmsw delete ATMswitch-1 
+Aug 21 12:55:56.307 HYPERVISOR: exec_cmd: hypervisor stop 
+Aug 21 12:55:56.556 HYPERVISOR: Stopped.
+Aug 21 12:55:56.556 GENERAL: reset done.
